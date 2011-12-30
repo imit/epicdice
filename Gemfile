@@ -1,6 +1,6 @@
 require 'rbconfig'
 HOST_OS = RbConfig::CONFIG['host_os']
-source 'http://rubygems.org'
+source 'http://gemcutter.org'
 gem 'rails', '3.1.3'
 group :assets do
   gem 'sass-rails',   '~> 3.1.5'
