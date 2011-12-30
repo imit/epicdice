@@ -1,4 +1,6 @@
 Epicdice::Application.routes.draw do
+  resources :player_characters
+
   #get \"users\/show\"
 
   root :to => "home#index"

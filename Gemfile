@@ -8,9 +8,7 @@ group :assets do
   gem 'uglifier', '>= 1.0.3'
 end
 gem 'jquery-rails'
-if HOST_OS =~ /linux/i
-  gem 'therubyracer', '>= 0.9.8'
-end
+gem 'therubyracer', '>= 0.9.8'
 gem "bson_ext", ">= 1.3.1"
 gem "mongoid", ">= 2.3.3"
 gem "devise", ">= 1.5.0"

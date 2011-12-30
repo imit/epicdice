@@ -7,13 +7,14 @@
     <title>Epicdice</title>
     <meta name="description" content="">
     <meta name="author" content="">
-    <%= stylesheet_link_tag    "application" %>
+    <%= stylesheet_link_tag 'application' %>
     <%= javascript_include_tag "application" %>
     <%= csrf_meta_tags %>
   </head>
-  <body class="<%= params[:controller] %>">
+  <body>
     <div id="container" class="container">
       <header>
+		<div class="logo"></div>
         <nav>
           <ul class="hmenu">
             <%= render 'shared/navigation' %>
@@ -23,11 +24,15 @@
           <%= content_tag :div, msg, :id => "flash_\#{name}" if msg.is_a?(String) %>
         <%- end -%>
       </header>
-      <div id="main" role="main">
-        <%= yield %>
+      <div id="main" class="content" role="main">
+		<div class="inner_container">
+        	<%= yield %>
+		</div>
       </div>
-      <footer>
-      </footer>
+
     </div> <!--! end of #container -->
+      <footer>
+<center>	powered by underpant gnomes </center>
+      </footer>
   </body>
 </html>

@@ -1,0 +1,106 @@
+
+
+<%= form_for(@player_character) do |f| %>
+<div class="row show-grid">
+	<div class="span8">
+		
+	  <div class="clearfix">
+	    <label for="xlInput">Character Name</label>
+	    <div class="input">
+			<%= f.text_field :name, :class => "xlarge" %>
+	    </div>
+	  </div><!-- /clearfix -->
+	
+	<div class="clearfix error">
+		 <div class="input">
+			<span class="help-inline">You have <strong id="remaining_points">10</strong> points to spend, choose wisely!</span>
+		</div>
+	</div>
+	
+	  <div class="clearfix">
+		<label for="xlInput">Stamina</label>
+	    <div class="input">
+			<div class="input-prepend">
+			   <span class="add-on">5 +</span>
+			   <%= number_field_tag 'og_stamina',2 %>
+			</div>
+			
+	    </div>
+	  	
+	  </div><!-- /clearfix -->
+	
+	  <div class="clearfix">
+		<label for="xlInput">Strength</label>
+	    <div class="input">
+			<div class="input-prepend">
+			   <span class="add-on">5 +</span>
+			   <%= number_field_tag 'og_strength', 2 %>
+			</div>
+			
+	    </div>
+	  	
+	  </div><!-- /clearfix -->		
+	  <div class="clearfix">
+		<label for="xlInput">Intellect</label>
+	    <div class="input">
+			<div class="input-prepend">
+			   <span class="add-on">5 +</span>
+			   <%= number_field_tag 'og_intellect',2 %>
+			</div>
+			
+	    </div>
+	  	
+	  </div><!-- /clearfix -->
+	  <div class="clearfix">
+		<label for="xlInput">Agility</label>
+	    <div class="input">
+			<div class="input-prepend">
+			   <span class="add-on">5 +</span>
+			   <%= number_field_tag 'og_agility',2 %>
+			</div>
+			
+	    </div>
+	  	
+	  </div><!-- /clearfix -->
+	  <div class="clearfix">
+		<label for="xlInput">Spirit</label>
+	    <div class="input">
+			<div class="input-prepend">
+			   <span class="add-on">5 +</span>
+			   <%= number_field_tag 'og_spirit',2 %>
+			</div>
+			
+	    </div>
+	  	
+	  </div><!-- /clearfix -->
+	  <div class="clearfix">
+		<label for="xlInput">Armor</label>
+	    <div class="input">
+			<div class="input-prepend">
+			   <span class="add-on">5</span>
+			</div>
+			
+	    </div>
+	  	
+	  </div><!-- /clearfix -->
+	
+	  <div class="clearfix">
+	    <div class="input">
+			<%= f.submit "Create Character", :class => 'btn large primary', :id => "createcharbtn" %>
+			
+	    </div>
+	  	
+	  </div><!-- /clearfix -->
+	</div>
+	
+	
+	<div class="span7">
+		<%=  select_tag 'character_class_name', options_from_collection_for_select(CharacterClassType.all, 'name', 'name') %>
+		<div id="char_avatar" class="character_avatar char_mage">
+			
+		</div>
+	</div>
+	
+	
+</div>
+<% end %>
