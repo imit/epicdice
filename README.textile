@@ -1,19 +1,10 @@
 h2. Todo
 
-* ItemClass, Inventory Class
-* Location Class
-
-
+* Inventory in 
+* Equipment Slots
+* Monster
+* Battle
+* App design
 
 h2. future reference
 
-https://github.com/kristianmandrup/geo_calc
-
-https://github.com/kristianmandrup/mongoid-geo**
-
-https://github.com/apneadiving/Google-Maps-for-Rails
-
-https://github.com/alexreisner/geocoder
-
-http://railscasts.com/episodes/197-nested-model-form-part-2?view=asciicast --> item kismi icin
-http://stackoverflow.com/questions/4641565/rails-3-submit-a-form-with-multiple-records
