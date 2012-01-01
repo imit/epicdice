@@ -1,10 +1,84 @@
-<%= semantic_form_for @item do |f| %>
-  <%= f.inputs do %>
-    <%= f.input :name %>
-    <%= f.input :description %>
-  <% end %>
+<%= form_for(@item) do |f| %>
+<div class="clearfix">
+	<label for="xlInput">Item Type</label>
+  <div class="input">
+		<%= f.select :item_type, Item::ITEM_TYPES, :include_blank => false %>
+  </div>
+</div><!-- /clearfix -->
+<div class="clearfix">
+	<label for="xlInput">Item Category</label>
+  <div class="input">
+	<% categories = ItemCategory.all %>
+	<%= f.collection_select :item_category, categories, :id, :name, :prompt => true,:include_blank => false %>
+  </div>
+</div><!-- /clearfix -->
 
-  <%= f.buttons do %>
-    <%= f.commit_button %>
-  <% end %>
+  <div class="clearfix">
+	<label for="xlInput">Item Name</label>
+    <div class="input">
+		<%= f.text_field :name, :class => "xlarge" %>
+    </div>
+  </div><!-- /clearfix -->
+
+  <div class="clearfix">
+	<label for="xlInput">Item Description</label>
+    <div class="input">
+		<%= f.text_area :description, :class => "xlarge" %>
+    </div>
+  </div><!-- /clearfix -->
+
+
+  <div class="clearfix">
+	<label for="xlInput">Stamina Bonus</label>
+    <div class="input">
+		<%= f.number_field :stamina_modifier, :class => "xlarge" %>
+    </div>
+  </div><!-- /clearfix -->
+  <div class="clearfix">
+	<label for="xlInput">Strength Bonus</label>
+    <div class="input">
+		<%= f.number_field :strength_modifier, :class => "xlarge" %>
+    </div>
+  </div><!-- /clearfix -->
+  <div class="clearfix">
+	<label for="xlInput">Intellect Bonus</label>
+    <div class="input">
+		<%= f.number_field :intellect_modifier, :class => "xlarge" %>
+    </div>
+  </div><!-- /clearfix -->
+  <div class="clearfix">
+	<label for="xlInput">Agility Bonus</label>
+    <div class="input">
+		<%= f.number_field :agility_modifier, :class => "xlarge" %>
+    </div>
+  </div><!-- /clearfix -->
+  <div class="clearfix">
+	<label for="xlInput">Spirit Bonus</label>
+    <div class="input">
+		<%= f.number_field :spirit_modifier, :class => "xlarge" %>
+    </div>
+  </div><!-- /clearfix -->
+
+  <div class="clearfix">
+	<label for="xlInput">Armor Bonus</label>
+    <div class="input">
+		<%= f.number_field :armor_modifier, :class => "xlarge" %>
+    </div>
+  </div><!-- /clearfix -->
+
+  <div class="clearfix">
+	<label for="xlInput">Crit Chance Bonus</label>
+    <div class="input">
+		<%= f.number_field :crit_chance_modifier, :class => "xlarge" %>
+    </div>
+  </div><!-- /clearfix -->
+
+  <div style="margin-top:60px;" class="clearfix">
+    <div class="input">
+		
+		<%= f.submit "Create Item", :class => 'btn large success', :id => "createcharbtn" %>
+    </div>
+  </div><!-- /clearfix -->
+			
+	 
 <% end %>

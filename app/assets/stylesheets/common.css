@@ -25,6 +25,7 @@ ul.hmenu {
 }
 ul.hmenu  li{
 	float:left;
+	list-style: none;
 	margin-right:20px;
 }
 .content {

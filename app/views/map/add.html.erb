@@ -1,0 +1,33 @@
+<h1>Map#add</h1>
+<p>Find me in app/views/map/add.html.erb</p>
+<script type="text/javascript"
+      src="http://maps.googleapis.com/maps/api/js?sensor=false"></script>
+<script type="text/javascript">
+
+$(document).ready(function () {
+	var myOptions = {
+        zoom: 4,
+        center: new google.maps.LatLng(-25.363882,131.044922),
+        mapTypeId: google.maps.MapTypeId.ROADMAP
+      };
+      var map = new google.maps.Map(document.getElementById('map_canvas'),
+          myOptions);
+
+      google.maps.event.addListener(map, 'click', function(e) {
+        placeMarker(e.latLng, map);
+      });
+});
+    function placeMarker(position, map) {
+      var marker = new google.maps.Marker({
+        position: position,
+        map: map
+      });
+      map.panTo(position);
+		console.log(position.lat());
+		$("input#lat").val(position.lat());
+		$("input#lng").val(position.lng());
+    }
+
+  </script>
+<div id="map_canvas" style="width: 500px;height: 500px"></div>
+<%= render "item_form" %>

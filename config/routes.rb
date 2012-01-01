@@ -1,13 +1,15 @@
 Epicdice::Application.routes.draw do
-  resources :items
+
+  match "map" => 'map#show'
+  match "map/add" => "map#add"
+  match "map/create_something" => "map#create_something"
+
   resources :player_characters
-  #get \"users\/show\"
-
-  root :to => "home#index"
-
+  resources :items
+  resources :item_categories
   devise_for :users
   resources :users, :only => :show
-
+  root :to => "home#index"
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

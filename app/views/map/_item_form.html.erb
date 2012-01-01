@@ -1,0 +1,26 @@
+<%= form_tag("/map/create_something") do %>
+	  <div class="clearfix">
+	    <label for="xlInput">Lat</label>
+	    <div class="input">
+			<%= text_field_tag :lat %>
+	    </div>
+	  </div><!-- /clearfix -->
+	  <div class="clearfix">
+	    <label for="xlInput">Lng</label>
+	    <div class="input">
+			<%= text_field_tag :lng %>
+	    </div>
+	  </div><!-- /clearfix -->
+	  <div class="clearfix">
+	    <label for="xlInput">Lng</label>
+	    <div class="input">
+			<%= select_tag "item", options_from_collection_for_select(@items, "id", "name") %>
+	    </div>
+	  </div><!-- /clearfix -->
+	  <div class="clearfix">
+	    <label for="xlInput">Lng</label>
+	    <div class="input">
+			<%= submit_tag %>
+	    </div>
+	  </div><!-- /clearfix -->
+<% end %>

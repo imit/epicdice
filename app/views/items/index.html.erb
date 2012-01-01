@@ -4,16 +4,18 @@
   <tr>
     <th>Name</th>
     <th>Description</th>
-    <th></th>
+	<th>Category</th>
+	<th>Item Type</th>
     <th></th>
     <th></th>
   </tr>
 
 <% @items.each do |item| %>
   <tr>
-    <td><%= item.name %></td>
+    <td><%= link_to item.name, item %></td>
     <td><%= item.description %></td>
-    <td><%= link_to 'Show', item %></td>
+ 	<td><%= item.item_category.name if item.item_category %></td>
+	<td><%= item.item_type_readable %></td>
     <td><%= link_to 'Edit', edit_item_path(item) %></td>
     <td><%= link_to 'Destroy', item, confirm: 'Are you sure?', method: :delete %></td>
   </tr>

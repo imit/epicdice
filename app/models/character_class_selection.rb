@@ -5,7 +5,6 @@ class CharacterClassSelection
   
   
   def self.select_class(charClassName,player)
-    
     cs = CharacterClassSelection.new
     cs.character = player
     cs.character_class_type = CharacterClassType.where(:name => charClassName).first

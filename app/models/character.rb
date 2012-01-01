@@ -11,6 +11,10 @@ class Character
   field :crit_chance, :type => Float, :default => 1
   field :user_id
   has_one :character_class_selection
+  has_one :inventory
+  validates :name, :presence => true
+  after_validation :create_inventory
+
   
   def hp
     self.health_points
@@ -50,4 +54,11 @@ class Character
   def character_class_name
     self.character_class.name if self.character_class_selection
   end
+  
+  private
+  def create_inventory
+    self.inventory = Inventory.create(:character => self)
+    self.inventory.save
+  end
+
 end

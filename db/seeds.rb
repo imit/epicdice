@@ -20,3 +20,13 @@ warrior = CharacterClassType.create!(:name => "Warrior", :description => "Brute 
 rogue = CharacterClassType.create!(:name => "Rogue", :description => "Sneakiness", :stamina_modifier => 0.3, :strength_modifier => 0.3, :intellect_modifier => 0.2, :agility_modifier => 0.4, :spirit_modifier => 0.2, :armor_modifier => 0.3, :crit_chance_modifier => 0.4)
 
 puts "Basic Character Class Types created captain!"
+
+
+
+ItemCategory.create!(:name => "Weapon")
+ItemCategory.create!(:name => "Armor")
+ItemCategory.create!(:name => "Food")
+ItemCategory.create!(:name => "Fish")
+ItemCategory.create!(:name => "Potion")
+ItemCategory.create!(:name => "Corpse")
+puts "A bunch of Item Categories created captain!"
