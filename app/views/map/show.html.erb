@@ -1,4 +1,6 @@
 <h1>Game#map</h1>
+
+<li><%= link_to('map_add_item', map_add_path)  %> </li>
 <% @map_points.each do |mp| %>
   ["<%= mp.address %>", <%= mp.coordinates[0] %>, <%= mp.coordinates[1] %>, 4],
 <% end %>

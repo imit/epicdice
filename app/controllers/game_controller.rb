@@ -1,6 +1,7 @@
 class GameController < ApplicationController
-  def map
-    @map_points=  MapPoint.all
+
+  def index
+    @active_player_list = current_user.player_characters
   end
 
 end

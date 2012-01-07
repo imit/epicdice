@@ -19,6 +19,7 @@ class Character
   def hp
     self.health_points
   end
+  
   def health_points 
     (self.stamina / self.character_class.stamina_modifier).round
   end

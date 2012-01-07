@@ -22,7 +22,7 @@ class Item
   belongs_to :item_category
   
   ITEM_TYPES = [["misc", 0], ["usable", 1], ["resource",2], ["dependency",3], ["equipment",4]]
-  
+  ITEM_RARITY = [["common", 0], ["rare",1], ["unique", 2], ["epic", 3], ["artifact", 4]]
   def item_type_readable
     ITEM_TYPES[self.item_type][0]
   end

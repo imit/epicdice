@@ -40,9 +40,7 @@ class PlayerCharactersController < ApplicationController
   # POST /characters
   # POST /characters.json
   def create
-    @player_character = PlayerCharacter.new(params[:player_character])
-    @player_character.character_class_selection = CharacterClassSelection.select_class(params[:character_class_name],@player_character)
-    @player_character.user = current_user
+    @player_character = PlayerCharacter.new_player_character(params[:player_character], params[:character_class_name], current_user)
     respond_to do |format|
       if @player_character.save
         format.html { redirect_to @player_character, notice: 'Character was successfully created.' }

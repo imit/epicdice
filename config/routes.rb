@@ -1,5 +1,7 @@
 Epicdice::Application.routes.draw do
 
+
+  match "game" => "game#index"
   match "map" => 'map#show'
   match "map/add" => "map#add"
   match "map/create_something" => "map#create_something"
