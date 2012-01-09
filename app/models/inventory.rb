@@ -27,4 +27,13 @@ class Inventory
       
   end
   
+  def equip(item)
+    
+  end
+  
+  
+  def find_item(item)
+    self.item_references.where(:item => item)
+  end
+  
 end

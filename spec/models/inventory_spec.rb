@@ -21,7 +21,8 @@ describe Inventory do
   
   
   it "should equip an item" do
-    
+    @pc.inventory.equip(@item)
+    @pc.inventory.find_item(@item)
   end
   
   it "should take gold" do
